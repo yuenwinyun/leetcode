@@ -1,6 +1,6 @@
 import { ListNode } from "./ListNode";
 
-function removeDuplicatesFromSortedList(head: ListNode) {
+function removeDuplicatesFromSortedList(head: ListNode | null) {
     if (!head || !head.next) {
         return head;
     }
