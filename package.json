@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "repository": "git@github.com:yuenwinyun/leetcode.git",
-    "author": "yuenwinyun <114036811@qq.com>",
+    "author": "yuenwinyun <geek@yuenwinyun.com>",
     "license": "MIT",
     "scripts": {
         "watch": "tsc --watch",
@@ -15,5 +15,8 @@
         "prettier": "^2.2.1",
         "ts-jest": "^26.5.4",
         "typescript": "^4.2.3"
+    },
+    "devDependencies": {
+        "@types/ramda": "^0.27.39"
     }
 }

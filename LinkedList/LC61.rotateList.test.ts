@@ -1,4 +1,4 @@
-import { listNodePipe, ListNode } from "datastructure/ListNode";
+import { ListNodePipe } from "datastructure/ListNode";
 import { rotateList, goodPractice } from "./LC61.rotateList";
 
 interface TestProps {
@@ -14,9 +14,9 @@ test.each`
     ${[1, 2, 3]}       | ${2000000000} | ${[2, 3, 1]}
     ${[]}              | ${0}          | ${[]}
     ${[]}              | ${1}          | ${[]}
-`("", ({ head, k, result }: TestProps) => {
-    const actualResult = listNodePipe((listNodes: ListNode) => rotateList(listNodes, k))(head);
-    const goodPracticeResult = listNodePipe((listNodes: ListNode) => goodPractice(listNodes, k))(head);
-    expect(actualResult).toEqual(result);
-    expect(goodPracticeResult).toEqual(result);
+`("test rotateList", ({ head, k, result }: TestProps) => {
+    const getRotateListResult = ListNodePipe((listNode) => rotateList(listNode, k));
+    const getGoodPracticeResult = ListNodePipe((listNode) => goodPractice(listNode, k));
+    expect(getRotateListResult(head)).toEqual(result);
+    expect(getGoodPracticeResult(head)).toEqual(result);
 });

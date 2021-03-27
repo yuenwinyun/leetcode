@@ -3,6 +3,7 @@
         "strict": true,
         "noEmit": true,
         "noImplicitAny": true,
+        "esModuleInterop": true,
         "baseUrl": ".",
         "paths": {
             "util/*": ["util/*"],

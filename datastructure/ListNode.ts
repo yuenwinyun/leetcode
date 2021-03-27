@@ -1,10 +1,10 @@
 import compose from "util/compose";
 
-export class ListNode {
-    constructor(public val: any, public next: ListNode | null = null) {}
+export class ListNode<T = number> {
+    constructor(public val: T, public next: ListNode<T> | null = null) {}
 }
 
-export function deserializeListNode(nums: number[]) {
+export function deserialize(nums: number[]) {
     const sentinel = new ListNode(-9999999);
     let current = sentinel;
     for (const _ of nums) {
@@ -14,7 +14,7 @@ export function deserializeListNode(nums: number[]) {
     return sentinel.next;
 }
 
-export function serializeListNode(head: ListNode | null) {
+export function serialize(head: ListNode | null) {
     const res: number[] = [];
     let current: ListNode | null = head;
     while (current) {
@@ -24,4 +24,4 @@ export function serializeListNode(head: ListNode | null) {
     return res;
 }
 
-export const listNodePipe = (fn: Function) => compose(serializeListNode, fn, deserializeListNode);
+export const ListNodePipe = (fn: (listNode: ListNode) => any) => compose(serialize, fn, deserialize);
