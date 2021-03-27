@@ -1,3 +1,5 @@
+import compose from "util/compose";
+
 export class ListNode {
     constructor(public val: any, public next: ListNode | null = null) {}
 }
@@ -21,3 +23,5 @@ export function serializeListNode(head: ListNode | null) {
     }
     return res;
 }
+
+export const listNodePipe = (fn: Function) => compose(serializeListNode, fn, deserializeListNode);
