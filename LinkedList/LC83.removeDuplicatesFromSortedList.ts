@@ -1,4 +1,4 @@
-import { ListNode } from "./ListNode";
+import { ListNode } from "datastructure/ListNode";
 
 function removeDuplicatesFromSortedList(head: ListNode | null) {
     if (!head || !head.next) {

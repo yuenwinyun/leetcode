@@ -1,4 +1,4 @@
-import { ListNode } from "./ListNode";
+import { ListNode } from "datastructure/ListNode";
 
 export function deleteDuplicates(head: ListNode | null): ListNode | null {
     if (!head || !head.next) {
