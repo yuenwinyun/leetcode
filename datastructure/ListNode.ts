@@ -5,7 +5,7 @@ export class ListNode<T = number> {
 }
 
 export function deserialize(nums: number[]) {
-    const sentinel = new ListNode(-9999999);
+    const sentinel = new ListNode(0);
     let current = sentinel;
     for (const _ of nums) {
         current.next = new ListNode(_);
@@ -24,4 +24,5 @@ export function serialize(head: ListNode | null) {
     return res;
 }
 
-export const ListNodePipe = (fn: (listNode: ListNode | null) => any) => compose(serialize, fn, deserialize);
+export const ListNodePipe = (fn: (listNodes: ListNode | null) => ListNode | null) =>
+    compose(serialize, fn, deserialize);
