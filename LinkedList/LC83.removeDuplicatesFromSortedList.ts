@@ -1,10 +1,9 @@
 import { ListNode } from "datastructure/ListNode";
 
-function removeDuplicatesFromSortedList(head: ListNode | null) {
+export function removeDuplicatesFromSortedList(head: ListNode | null) {
     if (!head || !head.next) {
         return head;
     }
-
     // constant space
     let prev = head;
     let curr: ListNode | null = head.next;
