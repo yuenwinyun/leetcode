@@ -4,6 +4,7 @@
         "noEmit": true,
         "noImplicitAny": true,
         "esModuleInterop": true,
+        "noImplicitOverride": true,
         "baseUrl": ".",
         "paths": {
             "util/*": ["util/*"],
