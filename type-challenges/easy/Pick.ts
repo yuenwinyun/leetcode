@@ -16,5 +16,5 @@ interface Props2 {
 type Result = [
     //
     Expect<Equal<{ title: string }, MyPick<Props1, "title">>>,
-    Expect<Equal<{ abc: number; cccc: string }, MyPick<Props2, "abc" | "cccc">>>
+    Expect<Equal<{ abc: number; cccc: string }, MyPick<Props2, "abc" | "cccc">>>,
 ];

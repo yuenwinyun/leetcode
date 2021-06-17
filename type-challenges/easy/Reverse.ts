@@ -5,5 +5,5 @@ type Reverse<T extends string> = T extends `${infer Head}${infer Tail}` ? `${Rev
 type Result = [
     //
     Expect<Equal<Reverse<"abc">, "cba">>,
-    Expect<Equal<Reverse<"-caca-">, "-acac-">>
+    Expect<Equal<Reverse<"-caca-">, "-acac-">>,
 ];

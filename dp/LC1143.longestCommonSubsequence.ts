@@ -24,7 +24,7 @@ function TLE_longestCommonSubsequence(text1: string, text2: string): number {
     } else {
         return Math.max(
             TLE_longestCommonSubsequence(text1.slice(0, N - 1), text2.slice(0, M)),
-            TLE_longestCommonSubsequence(text1.slice(0, N), text2.slice(0, M - 1))
+            TLE_longestCommonSubsequence(text1.slice(0, N), text2.slice(0, M - 1)),
         );
     }
 }

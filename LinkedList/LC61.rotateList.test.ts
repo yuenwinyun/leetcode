@@ -15,8 +15,8 @@ test.each`
     ${[]}              | ${0}          | ${[]}
     ${[]}              | ${1}          | ${[]}
 `("test rotateList", ({ head, k, result }: TestProps) => {
-    const getRotateListResult = ListNodePipe((listNode) => rotateList(listNode, k));
-    const getGoodPracticeResult = ListNodePipe((listNode) => goodPractice(listNode, k));
+    const getRotateListResult = ListNodePipe(listNode => rotateList(listNode, k));
+    const getGoodPracticeResult = ListNodePipe(listNode => goodPractice(listNode, k));
     expect(getRotateListResult(head)).toEqual(result);
     expect(getGoodPracticeResult(head)).toEqual(result);
 });

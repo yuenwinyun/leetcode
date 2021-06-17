@@ -7,7 +7,8 @@
     "license": "MIT",
     "scripts": {
         "start": "tsc --watch",
-        "test": "jest"
+        "test": "jest --watch",
+        "format": "prettier --config ./.prettierrc.yml --write '**/*.{ts,tsx,js,jsx,json,yml}'"
     },
     "dependencies": {
         "@types/jest": "^26.0.23",

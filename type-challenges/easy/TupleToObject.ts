@@ -11,5 +11,5 @@ interface Expected1 {
 
 type Result = [
     //
-    Expect<Equal<Expected1, TupleToObject<["A", "B"]>>>
+    Expect<Equal<Expected1, TupleToObject<["A", "B"]>>>,
 ];

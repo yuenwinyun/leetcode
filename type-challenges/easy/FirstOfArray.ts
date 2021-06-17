@@ -7,8 +7,4 @@ type A = [1];
 type B = [];
 type C = ["a", 2, false];
 
-type Result = [
-    Expect<Equal<First<A>, 1>>,
-    Expect<Equal<First<B>, never>>,
-    Expect<Equal<First<C>, "a">>
-]
+type Result = [Expect<Equal<First<A>, 1>>, Expect<Equal<First<B>, never>>, Expect<Equal<First<C>, "a">>];
