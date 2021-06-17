@@ -19,6 +19,5 @@ function nextGreaterElement1(nums1: number[], nums2: number[]): number[] {
         }
         stack.push(nums2[i]);
     }
-
-    return nums1.map(v => map.get(v) || -1);
+    return nums1.map(v => map.get(v) ?? -1);
 }
