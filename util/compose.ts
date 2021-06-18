@@ -1,8 +1,8 @@
-type FirstOrArray<T extends readonly any[]> = T extends [infer P, ...infer N] ? P : never;
+type LastOfArray<T extends readonly any[]> = T extends [...infer N, infer P] ? P : never;
 
 export default function compose<
     T extends readonly ((...values: any[]) => any)[],
-    Result extends FirstOrArray<
+    Result extends LastOfArray<
         {
             [K in keyof T]: T[K] extends (...values: infer V) => infer R ? (...values: V) => R : T[K];
         }
