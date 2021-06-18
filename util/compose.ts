@@ -4,10 +4,10 @@ export default function compose<
     T extends readonly ((...values: any[]) => any)[],
     Result extends LastOfArray<
         {
-            [K in keyof T]: T[K] extends (...values: infer V) => infer R ? (...values: V) => R : T[K];
+            [K in keyof T]: T[K] extends (...values: infer V) => infer R ? (...values: [...V]) => R : T[K];
         }
     >,
->(...fns: [...T]): Result {
+>(...fns: [...T]) {
     return (
         fns.length === 0
             ? <T>(v: T) => v
@@ -15,7 +15,7 @@ export default function compose<
             ? fns[0]
             : fns.reduce(
                   (a, b) =>
-                      (...args: any) =>
+                      (...args: any[]) =>
                           a(b(...args)),
               )
     ) as Result;

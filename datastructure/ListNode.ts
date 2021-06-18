@@ -6,7 +6,7 @@ export class ListNode<T = number> {
 
 export function deserialize(nums: number[]) {
     const sentinel = new ListNode(0);
-    let current = sentinel;
+    let current: ListNode | null = sentinel;
     for (const _ of nums) {
         current.next = new ListNode(_);
         current = current.next;
