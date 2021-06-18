@@ -7,12 +7,16 @@ export default function compose<
             [K in keyof T]: T[K] extends (...values: infer V) => infer R ? (...values: V) => R : T[K];
         }
     >,
->(...fns: [...T]) {
-    return ((v: T) => {
-        let res = v;
-        for (const fn of fns.reverse()) {
-            res = fn(res);
-        }
-        return res;
-    }) as Result;
+>(...fns: [...T]): Result {
+    return (
+        fns.length === 0
+            ? <T>(v: T) => v
+            : fns.length === 1
+            ? fns[0]
+            : fns.reduce(
+                  (a, b) =>
+                      (...args: any) =>
+                          a(b(...args)),
+              )
+    ) as Result;
 }
