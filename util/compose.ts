@@ -1,6 +1,6 @@
 type LastOfArray<T extends readonly any[]> = T extends [...infer N, infer P] ? P : never;
 
-export default function compose<
+export function compose<
     T extends readonly ((...values: any[]) => any)[],
     Result extends LastOfArray<
         {

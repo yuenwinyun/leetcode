@@ -1,4 +1,4 @@
-import { ListNodePipe } from "datastructure/ListNode";
+import { ListNodePipe } from "../data-structure/ListNode";
 import { rotateList, goodPractice } from "./LC61.rotateList";
 
 interface TestProps {

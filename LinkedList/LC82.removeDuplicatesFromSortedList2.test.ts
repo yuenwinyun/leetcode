@@ -1,4 +1,4 @@
-import { ListNodePipe } from "datastructure/ListNode";
+import { ListNodePipe } from "../data-structure/ListNode";
 import { deleteDuplicates } from "./LC82.removeDuplicatesFromSortedList2";
 
 interface TestProps {

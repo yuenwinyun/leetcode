@@ -8,6 +8,6 @@ module.exports = {
     moduleFileExtensions: ["ts", "js"],
     moduleNameMapper: {
         "^util/(.*)$": "<rootDir>/util/$1",
-        "^datastructure/(.*)$": "<rootDir>/datastructure/$1",
+        "^data-structure/(.*)$": "<rootDir>/data-structure/$1",
     },
 };
