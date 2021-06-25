@@ -5,10 +5,10 @@ export class ListNode<T = number> {
 }
 
 export function deserialize(nums: number[]) {
-    const sentinel = new ListNode(0);
+    const sentinel = new ListNode(null as unknown as number);
     let current: ListNode | null = sentinel;
-    for (const _ of nums) {
-        current.next = new ListNode(_);
+    for (const num of nums) {
+        current.next = new ListNode(num);
         current = current.next;
     }
     return sentinel.next;
@@ -24,6 +24,6 @@ export function serialize(head: ListNode | null) {
     return res;
 }
 
-export const ListNodePipe = (fn: (listNodes: ListNode | null) => ListNode | null) => {
-    return compose(serialize, fn, deserialize);
+export const ListNodePipe = <T = number>(pipe: (listNode: ListNode<T> | null) => ListNode<T> | null) => {
+    return compose(serialize, pipe, deserialize);
 };
