@@ -1,1 +1,3 @@
-export function clumsyFactorial(N: number): number {}
+export function clumsyFactorial(N: number): number {
+    return N;
+}

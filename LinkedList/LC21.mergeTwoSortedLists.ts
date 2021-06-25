@@ -1,4 +1,4 @@
-import { ListNode } from "data-structure/ListNode";
+import { ListNode } from "../data-structure/ListNode";
 
 export function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     if (!l1) {

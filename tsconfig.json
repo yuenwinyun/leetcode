@@ -1,14 +1,10 @@
 {
     "compilerOptions": {
         "strict": true,
-        "noEmit": true,
         "noImplicitAny": true,
         "esModuleInterop": true,
         "noImplicitOverride": true,
         "baseUrl": ".",
-        "paths": {
-            "util/*": ["util/*"],
-            "data-structure/*": ["data-structure/*"]
-        }
+        "outDir": "./lib",
     }
 }

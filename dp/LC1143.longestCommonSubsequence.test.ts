@@ -1,6 +1,7 @@
 import { longestCommonSubsequence } from "./LC1143.longestCommonSubsequence";
+import { strict as assert } from "assert";
 
-test("LC1143.longestCommonSubsequence", () => {
-    expect(longestCommonSubsequence("abcde", "ace")).toBe(3);
-    expect(longestCommonSubsequence("bsbininm", "jmjkbkjkv")).toBe(1);
-});
+export function testLongestCommonSubsequence() {
+    assert.equal(longestCommonSubsequence("abcde", "ace"), 3);
+    assert.equal(longestCommonSubsequence("bsbininm", "jmjkbkjkv"), 1);
+}

@@ -1,5 +1,6 @@
 import { rabbitsInForest } from "./LC781.rabbitsInForest";
+import { strict as assert } from "assert";
 
-test("test LC781.rabbitsInForest", () => {
-    expect(rabbitsInForest([1, 0, 1, 0, 0])).toBe(5);
-});
+export function testRabbitsInForest() {
+    assert.equal(rabbitsInForest([1, 0, 1, 0, 0]), 5);
+}

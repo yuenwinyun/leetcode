@@ -1,5 +1,6 @@
 import { nextGreaterElement2 } from "./LC503.nextGreaterElement2";
+import { strict as assert } from "assert";
 
-test("testing nextGreaterElement2", () => {
-    expect(nextGreaterElement2([1, 2, 1])).toEqual([2, -1, 2]);
-});
+export function testNextGreaterElement2() {
+    assert.equal(nextGreaterElement2([1, 2, 1]), [2, -1, 2]);
+}

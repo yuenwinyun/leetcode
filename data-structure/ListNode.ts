@@ -1,4 +1,4 @@
-import { compose } from "util/compose";
+import { compose } from "../util/compose";
 
 export class ListNode<T = number> {
     constructor(public val: T, public next: ListNode<T> | null = null) {}
