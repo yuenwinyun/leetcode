@@ -1,4 +1,4 @@
-import { ListNodePipe, deserialize } from "../data-structure/ListNode";
+import { ListNodePipe, deserialize } from "data-structure/ListNode";
 import { mergeTwoLists } from "./LC21.mergeTwoSortedLists";
 
 test("test mergeTwoLists", () => {

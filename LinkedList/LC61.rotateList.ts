@@ -1,4 +1,4 @@
-import { ListNode } from "../data-structure/ListNode";
+import { ListNode } from "data-structure/ListNode";
 
 export function rotateList(head: ListNode | null, k: number): ListNode | null {
     const stack: (ListNode | null)[] = [];
