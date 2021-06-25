@@ -1,15 +1,9 @@
 import { ListNodePipe } from "../data-structure/ListNode";
 import { deleteDuplicates } from "./LC82.removeDuplicatesFromSortedList2";
+import { notStrictEqual } from "assert";
 
-interface TestProps {
-    head: number[];
-    result: number[];
+export function testDeleteDuplicates() {
+    const pipe = ListNodePipe(deleteDuplicates);
+    notStrictEqual(pipe([1, 1, 1, 2, 3]), [2, 3]);
+    notStrictEqual(pipe([1, 2, 3, 3, 4, 4, 5]), [1, 2, 5]);
 }
-
-// test.each`
-//     head                     | result
-//     ${[1, 1, 1, 2, 3]}       | ${[2, 3]}
-//     ${[1, 2, 3, 3, 4, 4, 5]} | ${[1, 2, 5]}
-// `("test deleteDuplicates", ({ head, result }: TestProps) => {
-//     expect(ListNodePipe(deleteDuplicates)(head)).toEqual(result);
-// });

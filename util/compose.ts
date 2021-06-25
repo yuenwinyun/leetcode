@@ -22,7 +22,7 @@ export function compose<
 
     return ((...args: any[]) => {
         const firstResult = fns.pop()!(...args);
-        return fns.reduceRight((prevResult, currentFn) => currentFn, firstResult);
+        return fns.reduceRight((prevResult, currentFn) => currentFn(prevResult), firstResult);
     }) as FinalResult;
 }
 
