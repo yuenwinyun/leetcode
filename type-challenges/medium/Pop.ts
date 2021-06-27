@@ -1,7 +1,9 @@
-type Pop<T extends readonly any[]> = T extends [...infer P, infer Q] ? P : [];
+import { Expect, Equal } from "@type-challenges/utils";
 
-type popArr1 = ["a", "b", "c"];
-type popArr2 = [1, "c", 2];
+type Pop<T extends readonly any[]> = T extends [...infer P, infer _] ? P : [];
 
-type re1 = Pop<popArr1>;
-type re2 = Pop<popArr2>;
+type TestCases = [
+    //
+    Expect<Equal<Pop<["a", "b", "c"]>, ["a", "b"]>>,
+    Expect<Equal<Pop<[1, "c", 2]>, [1, "c"]>>,
+];

@@ -22,7 +22,4 @@ interface Expected {
     };
 }
 
-type Result = [
-    //
-    Expect<Equal<Expected, DeepReadonly<P>>>,
-];
+type Result = [Expect<Equal<Expected, DeepReadonly<P>>>];

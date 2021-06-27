@@ -10,4 +10,7 @@ interface P {
     age: number;
 }
 
-type Result = [Expect<Equal<{ description: string }, MyOmit<P, "age" | "name">>>];
+type Result = [
+    //
+    Expect<Equal<{ description: string }, MyOmit<P, "age" | "name">>>,
+];

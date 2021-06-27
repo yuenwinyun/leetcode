@@ -1,15 +1,12 @@
+import { Expect, Equal } from "@type-challenges/utils";
+
 type Return<T> = T extends (...args: any[]) => infer Result ? Result : never;
 
-const A = () => {
-    if (Math.random() > 0.4) {
-        return 1;
-    } else {
-        return "1";
-    }
-};
+type ReturnA = Return<() => number | string>;
 
-const B = <T>(t: T) => t;
+type ReturnB = Return<<T extends string>() => T>;
 
-type ReturnA = Return<typeof A>;
-
-type ReturnB = Return<typeof B>;
+type TestCases = [
+    Expect<Equal<Return<() => number | string>, string | number>>,
+    Expect<Equal<Return<<T extends string>() => T>, string>>,
+];
