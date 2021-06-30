@@ -4,7 +4,7 @@ export class ListNode<T = number> {
     constructor(public val: T, public next: ListNode<T> | null = null) {}
 }
 
-export function deserialize(nums: number[]) {
+function deserialize(nums: number[]) {
     const sentinel = new ListNode(null as unknown as number);
     let current: ListNode | null = sentinel;
     for (const num of nums) {
@@ -14,7 +14,11 @@ export function deserialize(nums: number[]) {
     return sentinel.next;
 }
 
-export function serialize(head: ListNode | null) {
+function deserializeFromList(...nodes: number[][]) {
+    return nodes.map(deserialize);
+}
+
+function serialize(head: ListNode | null) {
     const res: number[] = [];
     let current: ListNode | null = head;
     while (current) {
@@ -24,6 +28,10 @@ export function serialize(head: ListNode | null) {
     return res;
 }
 
-export const listNodePipe = <T = number>(pipe: (listNode: ListNode<T> | null) => ListNode<T> | null) => {
-    return compose(serialize, pipe, deserialize);
+function serializeFromList(...nodes: ListNode[]) {
+    return nodes.map(serialize);
+}
+
+export const composeListNode = <T = number>(pipe: (...nodes: (ListNode<T> | null)[]) => ListNode<T> | null) => {
+    return compose(serializeFromList, pipe, deserializeFromList);
 };

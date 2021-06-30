@@ -20,7 +20,7 @@ export function rotateList(head: ListNode | null, k: number): ListNode | null {
     return stack[0] || head;
 }
 
-export function goodPractice(head: ListNode | null, k: number): ListNode | null {
+export function rotateListGoodPractice(head: ListNode | null, k: number): ListNode | null {
     if (!head || !head.next) {
         return head;
     }
