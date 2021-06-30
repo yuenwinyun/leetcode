@@ -24,6 +24,6 @@ export function serialize(head: ListNode | null) {
     return res;
 }
 
-export const ListNodePipe = <T = number>(pipe: (listNode: ListNode<T> | null) => ListNode<T> | null) => {
+export const listNodePipe = <T = number>(pipe: (listNode: ListNode<T> | null) => ListNode<T> | null) => {
     return compose(serialize, pipe, deserialize);
 };
