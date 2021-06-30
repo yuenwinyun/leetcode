@@ -21,6 +21,7 @@ export function compose<
     }
 
     return ((...args: any[]) => {
+        // FIXME: need add test case for compose function
         const firstResult = fns.pop()!(...args);
         return fns.reduceRight((prevResult, currentFn) => currentFn(prevResult), firstResult);
     }) as FinalResult;
