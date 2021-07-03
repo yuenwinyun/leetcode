@@ -14,8 +14,8 @@ function deserialize(nums: number[]) {
     return sentinel.next;
 }
 
-function deserializeFromList(...nodes: number[][]) {
-    return nodes.map(deserialize);
+function deserializeFromList(...listNodes: number[][]) {
+    return listNodes.map(deserialize);
 }
 
 function serialize(head: ListNode | null) {
@@ -28,6 +28,6 @@ function serialize(head: ListNode | null) {
     return res;
 }
 
-export const composeListNode = <T = number>(pipe: (...nodes: (ListNode<T> | null)[]) => ListNode<T> | null) => {
+export function composeListNode<T = number>(pipe: (...ListNodes: (ListNode<T> | null)[]) => ListNode<T> | null) {
     return compose(serialize, pipe, deserializeFromList);
-};
+}
