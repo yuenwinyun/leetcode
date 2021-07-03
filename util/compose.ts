@@ -12,20 +12,20 @@ export type InferArgsTypeAndReturnTypeInArray<T> = {
 
 export function compose<
     T extends readonly ((...values: any[]) => any)[],
-    F extends InferArgsTypeAndReturnTypeInArray<T>,
-    FinalResult extends (...args: GetFunctionArgsType<LastOfArray<F>>) => GetFunctionReturnType<FirstOrArray<F>>,
+    R extends (
+        ...args: GetFunctionArgsType<LastOfArray<InferArgsTypeAndReturnTypeInArray<T>>>
+    ) => GetFunctionReturnType<FirstOrArray<InferArgsTypeAndReturnTypeInArray<T>>>,
 >(...fns: [...T]) {
-    if (fns.length === 0) {
-        // TODO: type it elegantly
-        return ((...v: any[]) => v) as unknown as FinalResult;
-    }
-
-    return ((...args: any[]) => {
-        // FIXME: need add test case for compose function
-        const firstResult = fns.pop()!(...args);
-        return fns.reduceRight((prevResult, currentFn) => currentFn(prevResult), firstResult);
-    }) as FinalResult;
+    return (
+        fns.length === 0
+            ? <T>(p: T) => p
+            : (...args: any[]) => {
+                  const reversedFns = fns.reverse();
+                  let res = reversedFns[0](...args);
+                  for (const fn of reversedFns.slice(1)) {
+                      res = fn(res);
+                  }
+                  return res;
+              }
+    ) as typeof fns extends [] ? <T>(p: T) => T : R;
 }
-
-// FIXME: type compose returnType as <T>(v: T) => v if no args provided
-const emptyArgsCompose = compose();
