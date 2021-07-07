@@ -1,6 +1,6 @@
 import type { Expect, Equal } from "@type-challenges/utils";
 
-type DeepReadonly<T extends object> = {
+type DeepReadonly<T extends {}> = {
     readonly [P in keyof T]: T[P] extends object ? DeepReadonly<T[P]> : T[P];
 };
 

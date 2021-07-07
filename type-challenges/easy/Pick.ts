@@ -13,7 +13,7 @@ interface Props2 {
     cccc: string;
 }
 
-type Result = [
+type TestCases = [
     Expect<Equal<{ title: string }, MyPick<Props1, "title">>>,
     Expect<Equal<{ abc: number; cccc: string }, MyPick<Props2, "abc" | "cccc">>>,
 ];

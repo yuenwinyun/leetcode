@@ -1,6 +1,6 @@
 import { Expect, Equal } from "@type-challenges/utils";
 
-type Pop<T extends readonly any[]> = T extends [...infer P, infer _] ? P : [];
+type Pop<T extends readonly unknown[]> = T extends [...infer P, infer _] ? P : [];
 
 type TestCases = [
     //

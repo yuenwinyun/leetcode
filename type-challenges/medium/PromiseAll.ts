@@ -1,4 +1,4 @@
-declare function PromiseAll<T extends readonly any[]>(
+declare function PromiseAll<T extends readonly unknown[]>(
     values: readonly [...T],
 ): Promise<
     {

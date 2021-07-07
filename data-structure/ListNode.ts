@@ -4,10 +4,10 @@ export class ListNode<T = number> {
     constructor(public val: T, public next: ListNode<T> | null = null) {}
 }
 
-function deserialize(nums: number[]) {
+function deserialize(numbers: number[]) {
     const sentinel = new ListNode(Number.MIN_SAFE_INTEGER);
     let current: ListNode | null = sentinel;
-    for (const num of nums) {
+    for (const num of numbers) {
         current.next = new ListNode(num);
         current = current.next;
     }
@@ -28,6 +28,6 @@ function serialize(head: ListNode | null) {
     return res;
 }
 
-export function composeListNode<T = number>(pipe: (...ListNodes: (ListNode<T> | null)[]) => ListNode<T> | null) {
+export function composeListNode(pipe: (...ListNodes: (ListNode | null)[]) => ListNode | null) {
     return compose(serialize, pipe, deserializeFromList);
 }

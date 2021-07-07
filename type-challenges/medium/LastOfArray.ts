@@ -1,6 +1,6 @@
 import { Equal, Expect } from "@type-challenges/utils";
 
-type LastOfArray<T extends readonly any[]> = T extends [...infer _, infer Q] ? Q : never;
+type LastOfArray<T extends readonly unknown[]> = T extends [...infer _, infer Q] ? Q : never;
 
 type TestCases = [
     Expect<Equal<LastOfArray<["a", "b", "c"]>, "c">>,

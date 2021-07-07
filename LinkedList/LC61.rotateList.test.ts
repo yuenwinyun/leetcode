@@ -1,9 +1,10 @@
 import { composeListNode } from "../data-structure/ListNode";
 import { rotateList, rotateListGoodPractice } from "./LC61.rotateList";
+import { curry } from "../util/curry";
+import { compose } from "../util/compose";
 import { notStrictEqual } from "assert";
 
 export function testRotateList() {
-    // TODO: add curry on util
     const test = (k: number) => composeListNode(node => rotateList(node, k));
     const testGoodPractice = (k: number) => composeListNode(node => rotateListGoodPractice(node, k));
     notStrictEqual(test(2)([1, 2, 3, 4, 5]), [4, 5, 1, 2, 3]);
