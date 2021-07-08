@@ -1,18 +1,18 @@
-type Curry<P> = P extends (...args: infer A) => infer R
-    ? A extends [infer P1, ...infer Rest]
-        ? (p: P1) => Curry<(...args: Rest) => R>
+type Curry<T, KnownArgs extends unknown[]> = T extends (...args: infer Args) => infer R
+    ? Args extends [...KnownArgs, infer P, ...infer Rest]
+        ? (p: P) => Curry<(...args: Rest) => R, []>
         : R
-    : P;
+    : never;
 
-// FIXME: type safe with curryArgs
-export function curry<F extends (...fnArgs: any[]) => any>(fn: F, ...curryArgs: any[]) {
+export function curry<Func extends (...args: any[]) => unknown, Args extends unknown[]>(fn: Func, ...knownArgs: Args) {
     const funcArgsLength = fn.length;
-    return function (this: unknown, ...args: unknown[]) {
-        const aggregatedArgs = [...curryArgs, ...args];
+
+    return function (this: {}, ...args: unknown[]) {
+        const aggregatedArgs = [...knownArgs, ...args];
         if (aggregatedArgs.length === funcArgsLength) {
             return fn.apply(this, aggregatedArgs);
         } else {
             return curry.call(this, fn, ...aggregatedArgs);
         }
-    } as Curry<F>;
+    } as Curry<Func, Args>;
 }

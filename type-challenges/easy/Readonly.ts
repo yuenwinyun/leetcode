@@ -2,15 +2,17 @@ type MyReadonly<T extends {}> = {
     readonly [K in keyof T]: T[K];
 };
 
-interface O {
+interface Obj {
     name: string;
     age: number;
 }
 
-const o: MyReadonly<O> = {
+const obj: MyReadonly<Obj> = {
     name: "",
     age: 2,
 };
 
 // @ts-expect-error
-o.name = "";
+obj.name = "";
+// @ts-expect-error
+obj.age = 3;

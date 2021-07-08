@@ -4,7 +4,7 @@ export class ListNode<T = number> {
     constructor(public val: T, public next: ListNode<T> | null = null) {}
 }
 
-function deserialize(numbers: number[]) {
+export function deserialize(numbers: number[]) {
     const sentinel = new ListNode(Number.MIN_SAFE_INTEGER);
     let current: ListNode | null = sentinel;
     for (const num of numbers) {
@@ -14,11 +14,11 @@ function deserialize(numbers: number[]) {
     return sentinel.next;
 }
 
-function deserializeFromList(...listNodes: number[][]) {
+export function deserializeFromList(...listNodes: number[][]) {
     return listNodes.map(deserialize);
 }
 
-function serialize(head: ListNode | null) {
+export function serialize(head: ListNode | null) {
     const res: number[] = [];
     let current: ListNode | null = head;
     while (current) {
