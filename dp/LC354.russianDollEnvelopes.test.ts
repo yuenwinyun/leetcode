@@ -1,22 +1,20 @@
-import { russianDollEnvelopes } from "./LC354.russianDollEnvelopes";
-import { strict as assert } from "assert";
+import { russianDollEnvelopes } from './LC354.russianDollEnvelopes'
 
-export function testRussianDollEnvelopes() {
-    assert.equal(
+test("russian doll envelopes", () => {
+    expect(
         russianDollEnvelopes([
             [5, 4],
             [6, 4],
             [6, 7],
             [2, 3],
         ]),
-        3,
-    );
-    assert.equal(
+    ).toBe(3);
+
+    expect(
         russianDollEnvelopes([
             [1, 1],
             [1, 1],
             [1, 1],
         ]),
-        1,
-    );
-}
+    ).toBe(1);
+});

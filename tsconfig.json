@@ -1,10 +1,22 @@
 {
     "compilerOptions": {
-        "strict": true,
-        "noImplicitAny": true,
+        "target": "es2017",
+        "types": ["node", "jest"],
+        "allowJs": true,
+        "skipLibCheck": true,
         "esModuleInterop": true,
-        "noImplicitOverride": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
         "baseUrl": ".",
-        "outDir": "./lib"
-    }
+        "noFallthroughCasesInSwitch": true,
+        "outDir": "./dist",
+        "importHelpers": true
+    },
+    "compileOnSave": true,
+    "include": ["."]
 }

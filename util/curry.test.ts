@@ -1,12 +1,13 @@
-import { curry } from "./curry";
-import { strict as assert } from "assert";
+import { curry } from './curry'
 
-export function testCurry() {
-    const test = curry((a: number, b: number) => a === b);
-    assert.equal(test(1)(1), true);
-    assert.equal(test(1)(2), false);
+test("[current] equal", () => {
+    const equal = curry((a: number, b: number) => a === b);
+    expect(equal(1)(1)).toBeTruthy();
+    expect(equal(1)(2)).toBeFalsy();
+});
 
-    const test2 = curry((a: number, b: number) => a + b, 1);
-    assert.equal(test2(1), 2);
-    assert.equal(test2(2), 3);
-}
+test("[current] add", () => {
+    const add = curry((a: number, b: number) => a + b, 1);
+    expect(add(1)).toBe(2);
+    expect(add(2)).toBe(3);
+});

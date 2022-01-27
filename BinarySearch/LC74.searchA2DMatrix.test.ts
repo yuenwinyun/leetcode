@@ -1,8 +1,7 @@
-import { searchA2DMatrix } from "./LC74.searchA2DMatrix";
-import { strict as assert } from "assert";
+import { searchA2DMatrix } from './LC74.searchA2DMatrix'
 
-export function testSearchA2DMatrix() {
-    assert.equal(
+test("search 2D matrix", () => {
+    expect(
         searchA2DMatrix(
             [
                 [1, 3, 5, 7],
@@ -11,9 +10,9 @@ export function testSearchA2DMatrix() {
             ],
             3,
         ),
-        true,
-    );
-    assert.equal(
+    ).toBeTruthy();
+
+    expect(
         searchA2DMatrix(
             [
                 [1, 3, 5, 7],
@@ -22,7 +21,7 @@ export function testSearchA2DMatrix() {
             ],
             13,
         ),
-        false,
-    );
-    assert.equal(searchA2DMatrix([[1, 3, 5]], 4), false);
-}
+    ).toBeFalsy();
+
+    expect(searchA2DMatrix([[1, 3, 5]], 4)).toBeFalsy();
+});

@@ -1,9 +1,8 @@
-import { compose } from "./compose";
-import { strict as assert } from "assert";
+import { compose } from './compose'
 
-export function testCompose() {
+test("[compose] multiply", () => {
     const addOne = (n: number) => n + 1;
-    const multiplyTwo = (n: number) => n * 2;
+    const multiplyTwo = (n: number) => n + 2;
     const composed = compose(multiplyTwo, addOne);
-    assert.equal(composed(2), 6);
-}
+    expect(composed(2)).toBe(5);
+});
