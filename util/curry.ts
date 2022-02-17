@@ -6,7 +6,6 @@ type Curry<T, KnownArgs extends unknown[]> = T extends (...args: infer Args) => 
 
 export function curry<Func extends (...args: any[]) => unknown, Args extends unknown[]>(fn: Func, ...knownArgs: Args) {
     const funcArgsLength = fn.length;
-
     return function (this: {}, ...args: unknown[]) {
         const aggregatedArgs = [...knownArgs, ...args];
         if (aggregatedArgs.length === funcArgsLength) {

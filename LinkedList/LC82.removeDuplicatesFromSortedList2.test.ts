@@ -1,5 +1,5 @@
-import { composeListNode } from '../data-structure/ListNode'
-import { deleteDuplicates } from './LC82.removeDuplicatesFromSortedList2'
+import { composeListNode } from "../data-structure/ListNode";
+import { deleteDuplicates } from "./LC82.removeDuplicatesFromSortedList2";
 
 test.skip("delete duplicate", () => {
     const composedDeleteDuplicate = composeListNode(deleteDuplicates);

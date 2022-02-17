@@ -1,4 +1,4 @@
-import { canPartitionKSubsets } from './LC698.canPartitionKSubsets'
+import { canPartitionKSubsets } from "./LC698.canPartitionKSubsets";
 
 test("can partition K subsets", () => {
     expect(canPartitionKSubsets([1, 2, 3, 4], 3)).toBeFalsy();

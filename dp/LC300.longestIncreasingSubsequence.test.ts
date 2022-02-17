@@ -1,4 +1,4 @@
-import { longestIncreasingSubsequence } from './LC300.longestIncreasingSubsequence'
+import { longestIncreasingSubsequence } from "./LC300.longestIncreasingSubsequence";
 
 test("longest increasing subsequence", () => {
     expect(longestIncreasingSubsequence([10, 9, 2, 5, 3, 7, 101, 18])).toBe(4);

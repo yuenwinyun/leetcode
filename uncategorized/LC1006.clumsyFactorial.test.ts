@@ -1,4 +1,4 @@
-import { clumsyFactorial } from './LC1006.clumsyFactorial'
+import { clumsyFactorial } from "./LC1006.clumsyFactorial";
 
 test("test clumsy factorial", () => {
     expect(clumsyFactorial(4)).toBe(7);

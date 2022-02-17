@@ -1,4 +1,4 @@
-import { nextGreaterElement1 } from './LC496.nextGreaterElement1'
+import { nextGreaterElement1 } from "./LC496.nextGreaterElement1";
 
 test("next greater element 1", () => {
     expect(nextGreaterElement1([4, 1, 2], [1, 3, 4, 2])).toEqual([-1, 3, -1]);

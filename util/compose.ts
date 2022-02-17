@@ -10,7 +10,6 @@ export type InferArgsTypeAndReturnTypeInArray<T> = {
     [K in keyof T]: T[K] extends (...values: infer V) => infer R ? (...values: V) => R : T[K];
 };
 
-// TODO: not type-safe on transitive functions
 export function compose<
     T extends readonly ((...values: any[]) => any)[],
     R extends (

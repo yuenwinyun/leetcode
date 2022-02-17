@@ -1,6 +1,6 @@
-import { deserialize } from '../data-structure/ListNode'
-import { curry } from '../util/curry'
-import { rotateList, rotateListGoodPractice } from './LC61.rotateList'
+import { deserialize } from "../data-structure/ListNode";
+import { curry } from "../util/curry";
+import { rotateList, rotateListGoodPractice } from "./LC61.rotateList";
 
 test.skip("[Poor Practice] rotate list", () => {
     const curriedRotateList = (k: number, node: number[]) => curry(rotateList, deserialize(node), k);

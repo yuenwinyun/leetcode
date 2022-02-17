@@ -1,4 +1,4 @@
-import { compose } from './compose'
+import { compose } from "./compose";
 
 test("[compose] multiply", () => {
     const addOne = (n: number) => n + 1;

@@ -1,4 +1,4 @@
-import { maximumLengthOfRepeatedSubarray } from './LC718.maximumLengthOfRepeatedSubarray'
+import { maximumLengthOfRepeatedSubarray } from "./LC718.maximumLengthOfRepeatedSubarray";
 
 test("maximum length of repeated subarray", () => {
     expect(maximumLengthOfRepeatedSubarray([1, 2, 3, 2, 1], [3, 2, 1, 4, 7])).toBe(3);

@@ -1,5 +1,5 @@
-import { composeListNode } from '../data-structure/ListNode'
-import { addTwoNumbers } from './LC2.addTwoNumbers'
+import { composeListNode } from "../data-structure/ListNode";
+import { addTwoNumbers } from "./LC2.addTwoNumbers";
 
 test.skip("add two list numbers", () => {
     const addTwoListNumbers = composeListNode(addTwoNumbers);

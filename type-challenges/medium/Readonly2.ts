@@ -1,7 +1,6 @@
-type Readonly2<T, K extends keyof T> = T &
-    {
-        readonly [P in keyof T as P extends K ? P : never]: T[P];
-    };
+type Readonly2<T, K extends keyof T> = T & {
+    readonly [P in keyof T as P extends K ? P : never]: T[P];
+};
 
 interface P {
     name: string;

@@ -15,7 +15,8 @@
         "baseUrl": ".",
         "noFallthroughCasesInSwitch": true,
         "outDir": "./dist",
-        "importHelpers": true
+        "importHelpers": true,
+        "noImplicitAny": true
     },
     "compileOnSave": true,
     "include": ["."]

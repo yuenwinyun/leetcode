@@ -1,5 +1,5 @@
-import { composeListNode } from '../data-structure/ListNode'
-import { mergeTwoLists } from './LC21.mergeTwoSortedLists'
+import { composeListNode } from "../data-structure/ListNode";
+import { mergeTwoLists } from "./LC21.mergeTwoSortedLists";
 
 test.skip("merge two lists", () => {
     const testMergeTwoLists = composeListNode(mergeTwoLists);

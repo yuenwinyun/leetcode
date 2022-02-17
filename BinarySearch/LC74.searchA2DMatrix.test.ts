@@ -1,4 +1,4 @@
-import { searchA2DMatrix } from './LC74.searchA2DMatrix'
+import { searchA2DMatrix } from "./LC74.searchA2DMatrix";
 
 test("search 2D matrix", () => {
     expect(

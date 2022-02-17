@@ -1,5 +1,6 @@
-import { compose } from "./compose";
 import { Equal, Expect } from "@type-challenges/utils";
+
+import { compose } from "./compose";
 
 const composeWithoutArgs = compose();
 
